@@ -11,3 +11,10 @@ CSRF_TRUSTED_ORIGINS = ["http://localhost:8080"]
 
 ALLOWED_HOSTS = ["*"]
 DOMAIN_NAME = "http://localhost:8000"
+
+EMAIL_BACKEND = "djcelery_email.backend.CeleryEmailBackend"
+EMAIL_HOST = env("EMAIL_HOST", default="mailhog")
+EMAIL_PORT = env("EMAIL_PORT")
+DEFAULT_FROM_EMAIL = "sebastian.golijow@gmail.com"
+DOMAIN = env("DOMAIN")
+SITE_NAME = "Authors haven"
