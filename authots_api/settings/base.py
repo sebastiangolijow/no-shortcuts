@@ -21,7 +21,7 @@ ROOT_DIR = Path(__file__).resolve().parent.parent.parent
 
 APP_DIR = ROOT_DIR / "core_apps"
 
-DEBUG = env.bool("DJANGO_DEBUG", False)
+DEBUG = False
 
 
 # Application definition
@@ -152,3 +152,8 @@ MEDIA_ROOT = str(ROOT_DIR / "mediafiles")
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 CORS_URLS_REGEX = r"^api/.*$"
+
+AUTH_USER_MODEL = "users.User"
+
+ALLOWED_HOSTS = ["*"]
+DOMAIN_NAME = "http://localhost:8000"

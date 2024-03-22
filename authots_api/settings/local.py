@@ -8,3 +8,6 @@ SECRET_KEY = env(
 DEBUG = True
 
 CSRF_TRUSTED_ORIGINS = ["http://localhost:8080"]
+
+ALLOWED_HOSTS = ["*"]
+DOMAIN_NAME = "http://localhost:8000"
