@@ -49,10 +49,17 @@ THIRD_PARTY_APPS = [
     "allauth.account",
     "allauth.socialaccount",
     "dj_rest_auth",
-    "dj_rest_Ath_registration",
+    "dj_rest_auth.registration",
+    "taggit",
 ]
 
-LOCAL_APPS = ["core_apps.profiles", "core_apps.common", "core_apps.users"]
+LOCAL_APPS = [
+    "core_apps.profiles",
+    "core_apps.common",
+    "core_apps.users",
+    "core_apps.articles",
+    "core_apps.ratings",
+]
 
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
 
@@ -179,7 +186,7 @@ if USE_TZ:
 
 REST_FRAMEWORK = {
     "DEFAULT_AUTHENTICATION_CLASSES": ["dj_rest_auth.jwt_auth.JWTCookieAuthentication"],
-    "DEFAULT_PERMISSION_CLASSES": ["rest_framework.permission.IsAuthenticated"],
+    "DEFAULT_PERMISSION_CLASSES": ["rest_framework.permissions.IsAuthenticated"],
     "DEFAULT_FILTER_BACKENDS": ["django_filters.rest_framework.DjangoFilterBackend"],
 }
 
@@ -211,4 +218,4 @@ ACCOUNT_EMAIL_VERIFICATION = "mandatory"
 ACCOUNT_CONFIRM_EMAIL_ON_GET = True
 ACCOUNT_EMAIL_CONFIRMATION_EXPIRE_DAYS = 1
 ACCOUNT_USER_MODEL_USERNAME_FIELD = None
-ACCOUNT_USERNAME_REQUIRED = True
+ACCOUNT_USERNAME_REQUIRED = False
