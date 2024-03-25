@@ -8,8 +8,8 @@ class ArticleFilter(filters.FilterSet):
     )
     title = filters.CharFilter(field_name="title", lookup_expr="icontains")
     tags = filters.CharFilter(field_name="tags__name", lookup_expr="iexact")
-    created_at = filters.DateFromToRangeFilter()(field_name="created_at")
-    updated_at = filters.DateFromToRangeFilter()(field_name="updated_at")
+    created_at = filters.DateFromToRangeFilter(field_name="created_at")
+    updated_at = filters.DateFromToRangeFilter(field_name="updated_at")
 
     class Meta:
         model = Article

@@ -11,11 +11,12 @@ class ArticleAdmin(admin.ModelAdmin):
 
 
 class ArticleViewAdmin(admin.ModelAdmin):
-    list_display = ["pkid", "article", "user", "viewed_ip"]
+    list_display = ["pkid", "article", "user", "viewer_ip"]
     list_display_links = ["pkid", "article"]
     list_filter = ["created_at", "updated_at"]
-    search_fields = ["article", "user", "viewed_ip"]
+    search_fields = ["article", "user", "viewer_ip"]
 
 
 admin.site.register(models.Article, ArticleAdmin)
 admin.site.register(models.ArticleView, ArticleViewAdmin)
+admin.site.register(models.Clap)
