@@ -3,3 +3,4 @@ POSTGRES_PORT=5432
 POSTGRES_DB=authors-live
 POSTGRES_USER=sebagoli
 POSTGRES_PASSWORD=SuperSecretPassword
+DATABASE_URL=postgres://sebagoli:SuperSecretPassword@postgres:5432/authors-live

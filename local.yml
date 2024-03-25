@@ -1,6 +1,14 @@
 version: "3.9"
 
 services:
+  es:
+    image: elasticsearch:7.17.9
+    environment:
+      - discovery.type=single-node
+    ports:
+      - "9200:9200"
+    networks:
+      - authors-api
   api:
     build:
       context: .
@@ -17,6 +25,8 @@ services:
     depends_on:
       - postgres
       - mailhog
+      - redis
+      - es
     command: /start
     networks:
       - authors-api
